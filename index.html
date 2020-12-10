@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderful Parallax Scrolling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h3 class="logo"> <span>erik</span>uckert<span>|dev&design</span></h3>
+                <div class="hamburger-menu">
+                    <div class="bar">
+                        <a href="#about"></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <h1 class="big-title translate" data-speed="0.1">Miraculous Parallax.</h1>
+        
+        <img src="img/mountain-parallax_foreground.png" class="mountain-foreground translate" data-speed="0" alt="">
+        <img src="img/mountain-parallax_background.png" class="mountain-background translate" data-speed="0.4" alt="">
+    </header>
+    
+    <section>
+        <div class="shadow"></div>
+
+        <div class="container" id="about">
+            <div class="content opacity">
+                <h3 class="title">
+                    About
+                    <div class="border"></div>
+                </h3>
+                <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque officiis quos expedita ipsa, a quidem inventore voluptates debitis accusamus tenetur qui et voluptas dicta, culpa earum, doloribus odio consectetur consequuntur soluta quasi nobis! Deserunt voluptatum reiciendis iure expedita sequi quisquam laboriosam temporibus exercitationem.</p>
+            </div>
+
+            <div class="imgContainer opacity">
+                <img src="img/mountain-para.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    
+    <script src="app.js"></script>
+</body>
+</html>
