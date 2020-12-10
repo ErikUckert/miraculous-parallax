@@ -236,3 +236,7 @@ section .container > *{
         font-size: 1.2rem;
     }
 }
+
+.upper {
+    text-transform: uppercase;
+}
