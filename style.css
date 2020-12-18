@@ -85,6 +85,7 @@ nav .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .logo{
@@ -94,6 +95,24 @@ nav .container{
     font-weight: 600;
     letter-spacing: 2px;
 }
+
+a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: lowercase;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+a:link {
+    text-decoration: none;
+  }
+
+a:hover { 
+    font-weight:600; 
+}
+
+a::after { display:block; content:attr(name); font-weight:600; visibility: hidden; overflow: hidden; height: 0px; }
 
 @media (max-width: 600px) {
     .logo{
@@ -105,43 +124,25 @@ nav .container{
     }
 }
 
+@media (max-width: 600px) {
+    a {
+        color: #fff;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 400px) {
+    a {
+        visibility: hidden; 
+        overflow: hidden;
+    }
+}
+
 .logo span{
     font-weight: 300;
-}
-
-.hamburger-menu{
-    width: 1.55rem;
-    height: 1.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.bar{
-    position: relative;
-    width: 1.2rem; 
-    height: 3px;
-    background-color: #fff;
-    border-radius: 2px;
-}
-
-.bar:before, .bar:after{
-    content: '';
-    position: absolute;
-    width: 1.55rem;
-    height: 3px;
-    right: 0;
-    background-color: #fff;
-    border-radius: 2px;
-}
-
-.bar:before{
-    transform: translateY(-8px);
-}
-
-.bar:after{
-    transform: translateY(8px);
 }
 
 .big-title{
