@@ -13,15 +13,20 @@ const border = document.querySelector(".border");
 let header_height = header.offsetHeight;
 let section_height = section.offsetHeight;
 
+/*
 // handle event listener for fixing negativ scrolling issues on apple products
 window.addEventListener('-scroll', () => {
     element.style.transform = `translateY(${-scroll * 0.1}px)`;
 })
+*/
+
 // handle event listener for scrolling
 window.addEventListener('scroll', () => {
 
     // get vertical offset when scrolling
     let scroll = window.scrollY;
+        //console.log(scroll) ##DEBUG
+
     // get spatial informations about the scrolled section (size & position)
     let sectionY = section.getBoundingClientRect();
     
@@ -31,7 +36,12 @@ window.addEventListener('scroll', () => {
         // get speed properties from html elements
         let speed = element.dataset.speed;
         // move elements vertical in relation to speed an scrolled offset
-        element.style.transform = `translateY(${scroll * speed}px)`;
+        // element.style.transform = `translateY(${scroll * speed}px)`;
+        if (scroll > 0 ) {
+            element.style.transform = `translateY(${scroll * speed}px)`;
+        } else {
+            element.style.transform = `translateY(${scroll * 0.1}px)`;
+        }
     });
 
     // Opacity handling for body section relative to vertical position when scrolling down
