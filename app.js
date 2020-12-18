@@ -8,21 +8,29 @@ const section = document.querySelector("section");
 const image_container = document.querySelector(".imgContainer");
 const opacity = document.querySelectorAll(".opacity");
 const border = document.querySelector(".border");
+const container = document.querySelector(".container");
 
 // get actual heights of section and header elements
 let header_height = header.offsetHeight;
 let section_height = section.offsetHeight;
+let container_height = section.offsetHeight;
 
 // handle event listener for scrolling
 window.addEventListener('scroll', () => {
 
     // get vertical offset when scrolling
     let scroll = window.scrollY;
-        //console.log(scroll) ##DEBUG
 
     // get spatial informations about the scrolled section (size & position)
     let sectionY = section.getBoundingClientRect();
-    
+
+    // prevent content & header colision by changing header visibility based on scroll position
+    if (sectionY.y < 0) {
+        container.style.opacity = sectionY.y / (container_height*0.1) + 1;
+    } else {
+        container.style.opacity = 1;
+    }
+
     // Parallax Scrolling Effekt: for every dom element with "translate" class
     translate.forEach(element => {
 
