@@ -13,13 +13,6 @@ const border = document.querySelector(".border");
 let header_height = header.offsetHeight;
 let section_height = section.offsetHeight;
 
-/*
-// handle event listener for fixing negativ scrolling issues on apple products
-window.addEventListener('-scroll', () => {
-    element.style.transform = `translateY(${-scroll * 0.1}px)`;
-})
-*/
-
 // handle event listener for scrolling
 window.addEventListener('scroll', () => {
 
@@ -35,8 +28,9 @@ window.addEventListener('scroll', () => {
 
         // get speed properties from html elements
         let speed = element.dataset.speed;
+
         // move elements vertical in relation to speed an scrolled offset
-        // element.style.transform = `translateY(${scroll * speed}px)`;
+        // for negativ scrolling disable different speeds to prevent tearing
         if (scroll > 0 ) {
             element.style.transform = `translateY(${scroll * speed}px)`;
         } else {
