@@ -37,7 +37,7 @@ window.addEventListener('scroll', () => {
         // get speed properties from html elements
         let speed = element.dataset.speed;
 
-        // move elements vertical in relation to speed an scrolled offset
+        // move elements vertical in relation to speed and scrolled offset
         // for negativ scrolling disable different speeds to prevent tearing
         if (scroll > 0 ) {
             element.style.transform = `translateY(${scroll * speed}px)`;
