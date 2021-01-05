@@ -55,3 +55,6 @@ if (sectionY.y < 0) {
     container.style.opacity = 1;
 }
 ```
+
+### 4 - Credits
+I build this demo page based on some work I found at [Rachid Demgharts](https://github.com/sefyudem) github profile and added a little spice to overcome scrolling problems and behavioral glitches.
