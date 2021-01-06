@@ -59,11 +59,13 @@ window.addEventListener('scroll', () => {
 
     // get spatial informations about the scrolled section (size & position)
     let image_containerY = image_container.getBoundingClientRect();
-    console.log(image_containerY)
+    let contentY = content.getBoundingClientRect();
+    console.log("content: ",contentY)
+    console.log("image: ",image_containerY)
 
     // move content & image element vertical to align in mid page
     content.style.transform = `translateY(${scroll / (section_height + sectionY.top) * 50 - 50}px)`;
-    image_container.style.transform = `translateY(${scroll / (section_height + sectionY.top) * -50 + 50}px)`;
+    image_container.style.transform = `translateY(${scroll / (section_height + sectionY.top) * -20 + 50}px)`;
 
     // let hyphen grow, baby!
     border.style.width = `${scroll / (sectionY.top + section_height) * 30}%`;
