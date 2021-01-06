@@ -57,12 +57,6 @@ window.addEventListener('scroll', () => {
     // shadow animation under parallax image
     shadow.style.height = `${scroll * 0.5 + 300}px`;
 
-    // get spatial informations about the scrolled section (size & position)
-    let image_containerY = image_container.getBoundingClientRect();
-    let contentY = content.getBoundingClientRect();
-    console.log("content: ",contentY)
-    console.log("image: ",image_containerY)
-
     // move content & image element vertical to align in mid page
     content.style.transform = `translateY(${scroll / (section_height + sectionY.top) * 50 - 50}px)`;
     image_container.style.transform = `translateY(${scroll / (section_height + sectionY.top) * -20 + 50}px)`;
