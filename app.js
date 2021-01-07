@@ -81,9 +81,11 @@ window.addEventListener('scroll', () => {
     let minDistance = (contentRect.height / 2) + (imageContainerRect.height / 2) + 10;
     //console.log(minDistance);
 
-    // move content & image element vertical to align in mid page
-    content.style.transform = `translateY(${scroll / (section_height + sectionY.top) * 50 - 50}px)`;
-    imageContainer.style.transform = `translateY(${scroll / (section_height + sectionY.top) * -20 + 50}px)`;
+    // move content & image element vertical to align in mid page if min distance is ok
+    if (distance >= minDistance) {
+        content.style.transform = `translateY(${scroll / (section_height + sectionY.top) * 50 - 50}px)`;
+        imageContainer.style.transform = `translateY(${scroll / (section_height + sectionY.top) * -20 + 50}px)`;
+    }
 
     // let hyphen grow, baby!
     border.style.width = `${scroll / (sectionY.top + section_height) * 30}%`;
