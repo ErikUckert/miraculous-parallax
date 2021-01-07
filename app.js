@@ -75,7 +75,11 @@ window.addEventListener('scroll', () => {
     // calculate the distance using the Pythagorean Theorem (a^2 + b^2 = c^2)
     var distanceSquared = Math.pow(contentRectX - imageContainerRectX, 2) + Math.pow(contentRectY  - imageContainerRectY, 2);
     var distance = Math.sqrt(distanceSquared);
-    console.log(distance);
+    //console.log(distance);
+
+    // calculate minimum distance between content & img container
+    let minDistance = (contentRect.height / 2) + (imageContainerRect.height / 2) + 10;
+    //console.log(minDistance);
 
     // move content & image element vertical to align in mid page
     content.style.transform = `translateY(${scroll / (section_height + sectionY.top) * 50 - 50}px)`;
